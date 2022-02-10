@@ -1,12 +1,16 @@
-import { DatePicker } from 'antd';
-import './App.css';
+import React from "react";
+import 'antd/dist/antd.min.css';
+import { Layout } from 'antd';
+import SearchBar from './components/header/index'
+const { Header, Footer, Sider, Content } = Layout;
 
-function App() {
-  return (
-    <>
-    <h1>1</h1>
-    </>
-  );
-}
+const App = () => (
+  
+  <Layout> 
+ 
+    <SearchBar   />
+  </Layout>
+  
+);
 
 export default App;
