@@ -8,7 +8,7 @@ export const fetchWeatherAction = createAsyncThunk(
   async (payload, { rejectWithValue, getState, dispatch }) => {
     try {
       const { data } = await axios.get(
-        `https://www.metaweather.com//api/location/search/?query=${payload}`
+        `https://www.metaweather.com/api/location/search/?query=${payload}`
       );
       return data;
     } catch (error) {

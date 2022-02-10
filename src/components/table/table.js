@@ -1,102 +1,44 @@
-import React from 'react';
-import { Table } from 'antd';
-
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "antd/dist/antd.css";
+import '../table/table.css';
+import { Table, Space } from "antd";
+import ModalButton from '../modal/modal';
 
 const columns = [
+  // Column 1
   {
-    title: 'City',
-    dataIndex: 'name',
-    /*
-    filters: [
-      {
-        text: 'Joe',
-        value: 'Joe',
-      },
-      {
-        text: 'Jim',
-        value: 'Jim',
-      },
-      {
-        text: 'Submenu',
-        value: 'Submenu',
-        children: [
-          {
-            text: 'Green',
-            value: 'Green',
-          },
-          {
-            text: 'Black',
-            value: 'Black',
-          },
-        ],
-      },
-    ],
-    */
-    // specify the condition of filtering result
-    // here is that finding the name started with `value`
-    /*
-    onFilter: (value, record) => record.name.indexOf(value) === 0,
-    sorter: (a, b) => a.name.length - b.name.length,
-    sortDirections: ['descend'],
-    */
-},
-  
+    title: "Name",
+    dataIndex: "name",
+    key: "City"
+  },
+
+  // Column 4
   {
-    title: 'Location',
-    dataIndex: 'address',
-    /*
-    filters: [
-      {
-        text: 'London',
-        value: 'London',
-      },
-      {
-        text: 'New York',
-        value: 'New York',
-      },
-    ],
-    */
-    /*
-    onFilter: (value, record) => record.address.indexOf(value) === 0,
-    */  
-},
+    title: "Action",
+    key: "action",
+    render: () => (
+      <Space size="middle">
+        {/* This is the button */}
+        <ModalButton/>
+      </Space>
+    )
+  }
 ];
 
 const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    
-    address: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Jim Red',
-    
-    address: 'London No. 2 Lake Park',
-  },
-];
 
+  {
+    key: "1",
+    name: "New York"
+  }
+
+];
 const TableList = () => {
-  return (
-  <Table columns={columns} /*>dataSource={data}*/  />
-  )}      
-  /*
-    function onChange(pagination, filters, sorter, extra) {
-  console.log('params', pagination, filters, sorter, extra);
+return(
+  <div className="table"> 
+  <Table columns={columns} dataSource={data} />,
+  </div>
+)
 }
-*/
-export default  TableList;
+export default TableList;

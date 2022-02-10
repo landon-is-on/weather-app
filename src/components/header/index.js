@@ -1,5 +1,5 @@
 import React from "react";
-import { Input,Space } from 'antd';
+import { Input } from 'antd';
 import 'antd/dist/antd.min.css';
 import '../header/SearchBar.css'
 import { fetchWeatherAction } from "../redux/slices/weatherSlices";
@@ -9,29 +9,29 @@ import { useDispatch, useSelector } from "react-redux";
 const { Search } = Input;
 const onSearch = value => console.log(value);
 
-
+/* SEARCH BAR COMPONET*/
 const SearchBar = () => {
-  const [city,setCity] =useState('chicago')
+  const [city,setCity] =useState('')
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchWeatherAction("new York"))
+    dispatch(fetchWeatherAction(""))
   }, []);
-
-const state = useSelector(state => state);
-const {weather, loading,error} = state;
+  
+  const state = useSelector(state => state);
   
   return (
+  /* SEARCH BAR */
     <> 
     <div className="space-align-block"> 
-    <h1 className="weather-title">Whats the weather?</h1>
+    <h1 className="weather-title">What is the weather?</h1>
     <Search 
     style={{ width: 300 }} 
     onClick={() => dispatch(fetchWeatherAction(city))} 
     value={city} 
     onChange={e => setCity(e.target.value)}
     placeholder="input search text"
-      enterButton="Search"
-      size="large"
+    enterButton="Search"
+    size="large"
       onSearch={onSearch}
     />
     </div>
