@@ -5,7 +5,7 @@ import { Table } from 'antd';
 
 const columns = [
   {
-    title: 'Name',
+    title: 'City',
     dataIndex: 'name',
     filters: [
       {
@@ -37,14 +37,9 @@ const columns = [
     sorter: (a, b) => a.name.length - b.name.length,
     sortDirections: ['descend'],
   },
+  
   {
-    title: 'Age',
-    dataIndex: 'age',
-    defaultSortOrder: 'descend',
-    sorter: (a, b) => a.age - b.age,
-  },
-  {
-    title: 'Address',
+    title: 'Location',
     dataIndex: 'address',
     filters: [
       {
