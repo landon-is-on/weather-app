@@ -15,7 +15,7 @@ const { Header, Footer, Sider, Content } = Layout;
 
 function App()  {
   
-  
+  const [city,setCity] =useState('chicago')
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchWeatherAction("new York"))
@@ -27,7 +27,11 @@ const {weather, loading,error} = state;
   return (
   <Layout> 
  
-    <SearchBar   />
+    <SearchBar  >
+    
+    
+    </SearchBar>
+
     <TableList/>
   </Layout>
   )
